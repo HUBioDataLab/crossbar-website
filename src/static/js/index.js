@@ -65,6 +65,8 @@ $(document).ready(function() {
         player.currentTime = player.duration / 100 * this.value;
       })
     }, false);*/
+
+    /** Not utilizing images for now
     preloadInterpolationImages();
 
     $('#interpolation-slider').on('input', function(event) {
@@ -72,6 +74,7 @@ $(document).ready(function() {
     });
     setInterpolationImage(0);
     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
+    */
 
     bulmaSlider.attach();
 
