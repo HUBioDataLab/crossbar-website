@@ -51,11 +51,13 @@
   <div class="hero bg-base-200">
     <div class="hero-content text-center">
       <div class="">
-        <h1 class="text-2xl font-bold max-w-4xl mx-auto">CROssBARv2: A Unified Biomedical Knowledge Graph for
+        <img src="./static/images/crossbar-logo.png" class="max-h-35 sm:max-h-55 rounded-lg mx-auto">
+
+        <h1 class="text-2xl font-bold max-w-4xl mx-auto mt-5">CROssBARv2: A Unified Biomedical Knowledge Graph for
           Heterogeneous Data
           Representation and LLM-Driven Exploration</h1>
 
-        <div class="text-xl my-10">
+        <div class="text-xl mt-10">
           <span class="">
             <a href="https://www.linkedin.com/in/bünyamin-şen-885661189" class="link link-primary link-hover"
               target="_blank">Bünyamin
@@ -75,38 +77,93 @@
           </span>
         </div>
 
-        <div class="text-lg mt-5">
-          <p><sup>1</sup>Biological Data Science Lab, Dept. of Computer Engineering & AI
-            Engineering, Hacettepe University, Ankara, Turkey</p>
-          <p><sup>2</sup>Dept. of Bioinformatics, Graduate School of Health Sciences,
-            Hacettepe University, Ankara, Turkey</p>
+        <div class="flex w-full flex-col sm:flex-row mx-auto gap-8 mt-10">
+          <div class="text-lg mt-5">
+            <p><sup>1</sup>Biological Data Science Lab, Dept. of Computer Engineering & AI
+              Engineering, Hacettepe University, Ankara, Turkey</p>
+            <p><sup>2</sup>Dept. of Bioinformatics, Graduate School of Health Sciences,
+              Hacettepe University, Ankara, Turkey</p>
+          </div>
+          <img src="./static/images/lab-logo.png" class="max-h-25 rounded-lg shadow-2xl mx-auto my-auto">
         </div>
 
-        <p class="my-10">
-          Developing effective therapeutics against prevalent diseases requires a deep understanding of molecular,
-          genetic, and cellular factors involved in disease development and progression. However, such knowledge is
-          dispersed across different databases, publications, and ontologies, making the process of collecting,
-          harmonising, integrating and analysing biological data a major challenge. Here, we present CROssBARv2, an
-          extended and improved version of <a href="https://crossbar.kansil.org/"
-            class="link link-primary link-hover">our previous
-            work</a>, a heterogeneous knowledge graph (KG) based system to
-          facilitate drug discovery and repurposing. CROssBARv2 collects large-scale
-          biological data from <span class="text-secondary">32 data sources</span> and stores them in a Neo4j-based
-          graph database. CROssBARv2 consists of
-          <span class="text-secondary">2,709,502 nodes</span> and <span class="text-secondary">12,688,124
-            relationships</span> between <span class="text-secondary">14 node types</span> (i.e., protein, gene,
-          organism, domain, biological process, molecular function, cellular component, drug, compound, disease,
-          pathway, phenotype, EC number, and side effect). We utilised pypath (a Python library for biological data
-          extraction), and BioCypher (a KG generation framework) for data collection, processing, harmonisation, and KG
-          construction via configurable adapter scripts. These adapters enable a completely reproducible KG construction
-          procedure. On top of that, we developed a GraphQL API and a large language model interface to convert natural
-          language queries into Neo4j's Cypher query language back and forth to access information within the KG and
-          answer user questions without LLM hallucinations. This development aims to facilitate the usage of researchers
-          without programming knowledge. <a href="https://github.com/HUBioDataLab/CROssBAR-BioCypher-Migration"
-            class="link link-primary link-hover">CROssBARv2</a> is expected to contribute to life sciences research
-          considering (i) the discovery of disease mechanisms at the molecular level and (ii) the development of
-          effective therapeutic strategies.
-        </p>
+        <div class="text-left container mx-auto p-8 mt-10">
+          <div class="flex flex-wrap gap-8 mb-8">
+            <!-- First Row -->
+            <div class="flex-1 min-w-50 md:w-1/2">
+              <p class="mb-2"><strong>The Challenge</strong></p>
+              <p class="mb-8">
+                Effective therapeutics for prevalent diseases require deep insight into molecular, genetic, and cellular
+                factors, yet this knowledge is scattered across diverse sources, posing major challenges for data
+                integration and analysis.
+              </p>
+              <p class="mb-2"><strong>What's inside:</strong></p>
+              <p class="">
+                Here, we present CROssBARv2, a heterogeneous knowledge graph (KG) based system
+                to facilitate systems biology and drug discovery/repurposing. CROssBARv2 collects large-scale biological
+                data from 32 data sources and stores them in a Neo4j-based graph database.
+              </p>
+            </div>
+
+            <!-- Second Row -->
+            <div class="flex-1 min-w-50 md:w-1/2">
+              <p class="mb-2"><strong>Our Solution: CROssBARv2</strong></p>
+              <p class="mb-8">
+                CROssBARv2 consists of 2,709,502 nodes and 12,688,124 relationships between 14 node types (i.e.,
+                protein,
+                gene, organism, domain, biological process, molecular function, cellular component, drug, compound,
+                disease, pathway, phenotype, EC number, and side effect).
+              </p>
+              <p class="mb-2"><strong>Smart Access</strong></p>
+              <p class="">
+                We developed a large language model interface to convert natural
+                language
+                queries into Neo4j's Cypher query language back and forth to access information within the KG and answer
+                user questions without LLM hallucinations. Other means of interacting with CROssBSRv2 are our GraphQL
+                API
+                and the Neo4j browser.
+              </p>
+            </div>
+          </div>
+
+          <!-- Last Row -->
+          <div class="w-full">
+            <p class="">
+              <strong>
+                CROssBARv2 is expected to contribute to life sciences research considering (i) the discovery of
+                biological
+                mechanisms at the molecular level and (ii) the development of effective therapeutic strategies.
+            </p>
+            </strong>
+          </div>
+
+        </div>
+
+        <div class="stats stats-vertical lg:stats-horizontal shadow-2xl bg-base-100 border-base-300 mb-4">
+          <div class="stat">
+            <div class="stat-title">Unique Databases</div>
+            <div class="stat-value">34</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Node Types</div>
+            <div class="stat-value">14</div>
+            <div class="stat-desc">e.g., genes, proteins, diseases</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Relationship Types</div>
+            <div class="stat-value">13</div>
+            <div class="stat-desc">e.g., associations, interactions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Nodes</div>
+            <div class="stat-value">2,709,502</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-title">Relationships</div>
+            <div class="stat-value">12,688,124</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
