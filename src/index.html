@@ -32,7 +32,10 @@
 
     <div class="hidden md:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a href="/llm-2" target="_blank"><img src="./static/images/llm.svg" class="h-5 w-5" />CROssBAR LLM</a></li>
+        <li><a href="/llm" target="_blank">
+            <img src="./static/images/llm-light.png" class="h-5 w-5 data-invert:hidden" />
+            <img src="./static/images/llm-dark.png" class="h-5 w-5 hidden data-invert:flex data-invert:invert" />
+            CROssBAR LLM</a></li>
         <li><a href="/api" target="_blank"><img src="./static/images/apollo.png"
               class="h-5 w-5 data-invert:invert" />GraphQL
             API</a></li>
@@ -66,8 +69,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
           </svg>
         </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <li><a href="/llm-2" target="_blank"><img src="./static/images/llm.svg" class="h-5 w-5" />CROssBAR LLM</a>
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-3 shadow">
+          <li><a href="/llm" target="_blank"> <img src="./static/images/llm-light.png"
+                class="h-5 w-5 data-invert:hidden" />
+              <img src="./static/images/llm-dark.png"
+                class="h-5 w-5 hidden data-invert:flex data-invert:invert" />CROssBAR LLM</a>
           </li>
           <li><a href="/api" target="_blank"><img src="./static/images/apollo.png"
                 class="h-5 w-5 data-invert:invert" />GraphQL
