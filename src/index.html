@@ -225,7 +225,7 @@
 
 
 
-    <div class="collapse collapse-arrow auto mt-10 max-w-5xl mx-auto group">
+    <div class="collapse collapse-arrow auto mt-10 max-w-5xl mx-auto group max-h-200">
         <input type="checkbox" />
       <div class="collapse-title text-lg bg-base-100">Biological entity (node) types</div>
 
@@ -255,7 +255,7 @@
           </tr>
           <tr>
             <th>3</th>
-            <td>Organism</td>
+            <td>Organism Taxon</td>
             <td>NCBI Tax ID</td>
             <td>UniProt</td>
           </tr>
@@ -291,7 +291,7 @@
           </tr>
           <tr>
             <th>9</th>
-            <td>Domain</td>
+            <td>Protein Domain</td>
             <td>InterPro</td>
             <td>InterPro</td>
           </tr>
@@ -311,7 +311,7 @@
             <th>12</th>
             <td>Molecular function</td>
             <td>GO</td>
-            <td>GOA, Expasy ENZYME</td>
+            <td>GOA</td>
           </tr>
           <tr>
             <th>13</th>
@@ -326,6 +326,394 @@
             <td>GOA</td>
           </tr>
         </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow auto mt-10 max-w-5xl mx-auto group max-h-200">
+        <input type="checkbox" />
+      <div class="collapse-title text-lg bg-base-100">Biological relationship (edge) types</div>
+
+      <div class="hidden group-has-checked:inline-block overflow-x-auto">
+      <table class="table table-sm sm:table-sm md:table-md lg:table-lg table-pin-rows table-pin-cols mt-10">
+        <thead>
+          <tr>
+            <th></th>
+            <td>Source node type</td>
+            <td>Relationship</td>
+            <td>Target node type</td>
+            <td>Source node identifier</td>
+            <td>Target node identifier</td>
+            <td>Source database</td>
+            <td>Filtering (thresholds for filtering)</td>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Protein</td>
+            <td>Interacts with</td>
+            <td>Protein</td>
+            <td>UniProt</td>
+            <td>UniProt</td>
+            <td>STRING, BioGRID, IntAct</td>
+            <td>Only high-confidence interactions (score >0.7) from STRING</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Protein</td>
+            <td>Has</td>
+            <td>Protein Domain</td>
+            <td>UniProt</td>
+            <td>InterPro</td>
+            <td>InterPro</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Protein</td>
+            <td>Enables / Contributes to</td>
+            <td>Molecular Function</td>
+            <td>UniProt</td>
+            <td>GO</td>
+            <td>GOA</td>
+            <td>electronic annotations (i.e., IEA) filtered out</td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>Protein</td>
+            <td>Located in / Is active in / Part of</td>
+            <td>Cellular component</td>
+            <td>UniProt</td>
+            <td>GO</td>
+            <td>GOA</td>
+            <td>electronic annotations (i.e., IEA) filtered out</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>Protein</td>
+            <td>Involved in</td>
+            <td>Biological process</td>
+            <td>UniProt</td>
+            <td>GO</td>
+            <td>GOA</td>
+            <td>electronic annotations (i.e., IEA) filtered out</td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td>Protein</td>
+            <td>Take part in</td>
+            <td>Pathway</td>
+            <td>UniProt</td>
+            <td>KEGG, Reactome</td>
+            <td>Reactome</td>
+            <td>electronic annotations (i.e., IEA) filtered out</td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>Protein</td>
+            <td>Catalyzes</td>
+            <td>EC Number</td>
+            <td>UniProt</td>
+            <td>EC Number</td>
+            <td>Expasy ENZYME</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>Protein</td>
+            <td>Belongs to</td>
+            <td>Organism Taxon</td>
+            <td>UniProt</td>
+            <td>NCBI Tax ID</td>
+            <td>UniProt</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>9</th>
+            <td>Protein</td>
+            <td>Is associated with</td>
+            <td>Phenotype</td>
+            <td>UniProt</td>
+            <td>HPO</td>
+            <td>HPO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>Gene</td>
+            <td>Encodes</td>
+            <td>Protein</td>
+            <td>Entrez</td>
+            <td>UniProt</td>
+            <td>UniProt</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>11</th>
+            <td>Gene</td>
+            <td>Is ortholog to</td>
+            <td>Gene</td>
+            <td>Entrez</td>
+            <td>Entrez</td>
+            <td>OMA, Pharos</td>
+            <td>orthologs between human and model organisms</td>
+          </tr>
+          <tr>
+            <th>12</th>
+            <td>Gene</td>
+            <td>Regulates</td>
+            <td>Gene</td>
+            <td>Entrez</td>
+            <td>Entrez</td>
+            <td>DoRothEA, TRRUST, CollecTRI</td>
+            <td>conflicting regulatory modes (i.e., activation, repression, and unknown or activation and repression) were excluded</td>
+          </tr>
+          <tr>
+            <th>13</th>
+            <td>Gene</td>
+            <td>Is related to</td>
+            <td>Disease</td>
+            <td>Entrez</td>
+            <td>MONDO</td>
+            <td>ClinVar, DisGeNET, KEGG, DISEASES, humsavar, OpenTargets</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>14</th>
+            <td>Drug</td>
+            <td>Interacts with</td>
+            <td>Drug</td>
+            <td>Drugbank</td>
+            <td>Drugbank</td>
+            <td>DDInter, KEGG</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>15</th>
+            <td>Drug</td>
+            <td>Targets</td>
+            <td>Protein</td>
+            <td>Drugbank</td>
+            <td>UniProt</td>
+            <td>Drugbank, Pharos, ChEMBL, DGIdb, KEGG, STITCH</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>16</th>
+            <td>Drug</td>
+            <td>Upregulates / Downregulates</td>
+            <td>Gene</td>
+            <td>Drugbank</td>
+            <td>Entrez</td>
+            <td>CTD</td>
+            <td>contradictory expression annotations (i.e., both increase and decrease expression) were excluded</td>
+          </tr>
+          <tr>
+            <th>17</th>
+            <td>Drug</td>
+            <td>Has</td>
+            <td>Side effect</td>
+            <td>Drugbank</td>
+            <td>Meddra</td>
+            <td>SIDER, OffSIDES, ADReCS</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>18</th>
+            <td>Drug</td>
+            <td>Has target in</td>
+            <td>Pathway</td>
+            <td>Drugbank</td>
+            <td>KEGG</td>
+            <td>KEGG, Reactome</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>19</th>
+            <td>Compound</td>
+            <td>Targets</td>
+            <td>Protein</td>
+            <td>ChEMBL</td>
+            <td>UniProt</td>
+            <td>ChEMBL, STITCH</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>20</th>
+            <td>Disease</td>
+            <td>Is comorbid with</td>
+            <td>Disease</td>
+            <td>MONDO</td>
+            <td>MONDO</td>
+            <td>Malacards</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>21</th>
+            <td>Disease</td>
+            <td>Is associated with</td>
+            <td>Disease</td>
+            <td>MONDO</td>
+            <td>MONDO</td>
+            <td>DisGeNET</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>22</th>
+            <td>Disease</td>
+            <td>Is a</td>
+            <td>Disease</td>
+            <td>MONDO</td>
+            <td>MONDO</td>
+            <td>MONDO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>23</th>
+            <td>Disease</td>
+            <td>Is associated with</td>
+            <td>Phenotype</td>
+            <td>MONDO</td>
+            <td>HPO</td>
+            <td>HPO</td>
+            <td>electronic annotations (i.e., IEA) filtered out</td>
+          </tr>
+          <tr>
+            <th>24</th>
+            <td>Disease</td>
+            <td>Modulates</td>
+            <td>Pathway</td>
+            <td>MONDO</td>
+            <td>KEGG, Reactome</td>
+            <td>KEGG, CTD</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>25</th>
+            <td>Disease</td>
+            <td>Is treated by</td>
+            <td>Drug</td>
+            <td>MONDO</td>
+            <td>Drugbank</td>
+            <td>ChEMBL, KEGG, CTD</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>26</th>
+            <td>Disease</td>
+            <td>Caused by</td>
+            <td>Organism Taxon (pathogen)</td>
+            <td>MONDO</td>
+            <td>NCBI Tax ID</td>
+            <td>PathoPhenoDB</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>27</th>
+            <td>Protein Domain</td>
+            <td>Enables</td>
+            <td>Molecular function</td>
+            <td>InterPro</td>
+            <td>GO</td>
+            <td>InterPro2GO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>28</th>
+            <td>Protein Domain</td>
+            <td>Localizes to</td>
+            <td>Cellular component</td>
+            <td>InterPro</td>
+            <td>GO</td>
+            <td>InterPro2GO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>29</th>
+            <td>Protein Domain</td>
+            <td>Is involved in</td>
+            <td>Biological process</td>
+            <td>InterPro</td>
+            <td>GO</td>
+            <td>InterPro2GO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>30</th>
+            <td>Molecular function/ Cellular component/  Biological process</td>
+            <td>Is a / Part of / Negatively regulates / Positively regulates</td>
+            <td>Molecular function/ Cellular component/  Biological process</td>
+            <td>GO</td>
+            <td>GO</td>
+            <td>GOA</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>31</th>
+            <td>Phenotype</td>
+            <td>Is a</td>
+            <td>Phenotype</td>
+            <td>HPO</td>
+            <td>HPO</td>
+            <td>HPO</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>32</th>
+            <td>Pathway</td>
+            <td>Is part of / Is equivalent to / Participates</td>
+            <td>Pathway</td>
+            <td>KEGG, Reactome</td>
+            <td>KEGG, Reactome</td>
+            <td>Reactome, Compath</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>33</th>
+            <td>Pathway</td>
+            <td>Is ortholog to</td>
+            <td>Pathway</td>
+            <td>KEGG, Reactome</td>
+            <td>KEGG, Reactome</td>
+            <td>KEGG, Reactome</td>
+            <td>Only between human and other organisms</td>
+          </tr>
+          <tr>
+            <th>34</th>
+            <td>Side effect</td>
+            <td>Is a</td>
+            <td>Side effect</td>
+            <td>Meddra</td>
+            <td>Meddra</td>
+            <td>ADReCS</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>35</th>
+            <td>EC Number</td>
+            <td>Is a</td>
+            <td>EC Number</td>
+            <td>EC Number</td>
+            <td>EC Number</td>
+            <td>Expasy ENZYME</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <td>Source node type</td>
+            <td>Relationship</td>
+            <td>Target node type</td>
+            <td>Source node identifier</td>
+            <td>Target node identifier</td>
+            <td>Source database</td>
+            <td>Filtering (thresholds for filtering)</td>
+            <th></th>
+          </tr>
+        </tfoot>
       </table>
       </div>
     </div>
